@@ -1,0 +1,2203 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auralis | Guante Terapéutico Inteligente para Hemiplejía</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white transition-colors duration-300 overflow-x-hidden"
+  >
+    <!-- Toast Notifications Container -->
+    <div
+      id="toast-container"
+      class="fixed top-24 right-5 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none"
+    ></div>
+
+    <!-- NAVBAR -->
+    <header
+      class="fixed top-0 left-0 w-full z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Logo & Title -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div>
+            <span
+              class="text-2xl font-extrabold font-display tracking-wider bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 dark:from-teal-400 dark:via-emerald-300 dark:to-cyan-300 bg-clip-text text-transparent"
+              >AURALIS</span
+            >
+            <span
+              class="block text-[10px] tracking-widest bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 dark:from-teal-400 dark:via-emerald-300 dark:to-cyan-300 bg-clip-text text-transparent text-sky-600 dark:text-sky-400 font-bold uppercase"
+              >CTP Don Bosco • 2026</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-600 dark:text-slate-300"
+        >
+          <a
+            href="#inicio"
+            class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+            >Inicio</a
+          >
+          <a
+            href="#proyecto"
+            class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+            >Proyecto</a
+          >
+          <a
+            href="#simulador"
+            class="hover:text-pacific-blue dark:hover:text-turquoise transition-colors"
+            >Simulador FES</a
+          >
+          <a
+            href="#resultados"
+            class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+            >Resultados</a
+          >
+          <a
+            href="#equipo"
+            class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+            >Equipo</a
+          >
+          <a
+            href="#contacto"
+            class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Actions & Theme Toggle -->
+        <div class="flex items-center space-x-3">
+          <a
+            href="#simulador"
+            class="hidden sm:inline-flex px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white shadow-md shadow-sky-500/20 transition-all hover:scale-105"
+          >
+            Probar Simulador
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-sky-600 focus:outline-none"
+            aria-label="Menu"
+          >
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 pt-3 pb-6 space-y-3"
+      >
+        <a
+          href="#inicio"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >Inicio</a
+        >
+        <a
+          href="#proyecto"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >El Proyecto</a
+        >
+        <a
+          href="#simulador"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >Simulador FES</a
+        >
+        <a
+          href="#resultados"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >Resultados</a
+        >
+        <a
+          href="#equipo"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >Equipo</a
+        >
+        <a
+          href="#contacto"
+          class="block py-2 text-slate-700 dark:text-slate-200 font-medium border-b border-slate-100 dark:border-slate-800"
+          >Contacto</a
+        >
+        <a
+          href="#simulador"
+          class="block text-center py-3 mt-4 rounded-xl text-xs font-bold bg-sky-600 text-white"
+          >Probar Simulador</a
+        >
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      id="inicio"
+      class="relative pt-32 pb-16 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-teal-50/80 via-emerald-50/30 to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950"
+    >
+      <!-- Background Decorative Orbs (Teal & Emerald) -->
+      <div
+        class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-200/50 dark:bg-teal-900/20 rounded-full blur-[120px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-40 right-10 w-80 h-80 bg-emerald-200/40 dark:bg-emerald-900/15 rounded-full blur-[100px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Column: Copy -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/80 dark:bg-teal-950/80 border border-teal-200 dark:border-teal-800/80 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider shadow-sm"
+            >
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"
+              ></span>
+              Expotec 2026 • Colegio Técnico Profesional Don Bosco
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-black font-display text-slate-900 dark:text-white tracking-tight leading-tight"
+            >
+              Auralis:
+              <span
+                class="bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 dark:from-teal-400 dark:via-emerald-300 dark:to-teal-300 bg-clip-text text-transparent"
+                >Apoyo y guía</span
+              >
+              en el movimiento humano.
+            </h1>
+
+            <p
+              class="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              Dispositivo biomédico inteligente tipo guante terapéutico
+              semiasistido, creado por estudiantes del
+              <strong class="text-slate-900 dark:text-white font-semibold"
+                >CTP Don Bosco</strong
+              >
+              para la rehabilitación motora de la mano en personas con
+              <strong class="text-teal-700 dark:text-teal-400 font-semibold"
+                >hemiplejía</strong
+              >
+              mediante Electroestimulación Funcional de Baja Frecuencia (FES).
+            </p>
+
+            <!-- Feature Badges -->
+            <div
+              class="pt-1 flex flex-wrap gap-3 justify-center lg:justify-start text-xs font-semibold text-slate-700 dark:text-slate-300"
+            >
+              <span
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-teal-200/60 dark:border-slate-800 shadow-sm"
+              >
+                <i class="fa-solid fa-check text-amber-500"></i> Estimulación
+                FES Regulada
+              </span>
+              <span
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-teal-200/60 dark:border-slate-800 shadow-sm"
+              >
+                <i class="fa-solid fa-hand-holding-hand text-teal-600"></i>
+                Asistencia Flexión/Extensión
+              </span>
+              <span
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-teal-200/60 dark:border-slate-800 shadow-sm"
+              >
+                <i
+                  class="fa-solid fa-mobile-screen-button text-emerald-600"
+                ></i>
+                Control & Monitoreo App
+              </span>
+            </div>
+
+            <!-- Actions -->
+            <div
+              class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="#simulador"
+                class="px-7 py-3.5 rounded-xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white shadow-lg shadow-teal-600/25 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
+              >
+                <span>Probar Simulador Interactivo</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+              <button
+                onclick="openModal('research-modal')"
+                class="px-7 py-3.5 rounded-xl font-bold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-teal-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] transition-all"
+              >
+                <i class="fa-solid fa-file-lines text-teal-600"></i>
+                <span>Ver Investigación Expotec</span>
+              </button>
+            </div>
+
+            <!-- Location info -->
+            <p class="text-xs text-slate-500 dark:text-slate-400 pt-2">
+              <i class="fa-solid fa-location-dot text-teal-500 mr-1"></i> San
+              José, Costa Rica • Circuito Escolar 06 • Sección 9-D
+            </p>
+          </div>
+
+          <!-- Right Column: Interactive Hand Graphic Card -->
+          <div class="lg:col-span-5 relative">
+            <div
+              class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-teal-100 dark:border-slate-800 relative"
+            >
+              <div
+                class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 mb-4"
+              >
+                <div>
+                  <h2
+                    class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-display"
+                  >
+                    Vista Biomecánica Auralis
+                  </h2>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Modelo preliminar con nodos de electrodos FES
+                  </p>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800"
+                >
+                  PROTOTIPO V1.2
+                </span>
+              </div>
+
+              <!-- SVG del simulador, versión estática -->
+              <div
+                class="relative w-full bg-teal-50/40 dark:bg-slate-950 rounded-2xl p-4 border border-teal-100/80 dark:border-slate-800 overflow-hidden"
+              >
+                <svg
+                  viewBox="0 0 460 260"
+                  class="w-full h-auto"
+                  aria-label="Vista biomecánica estática del guante Auralis FES"
+                >
+                  <defs>
+                    <linearGradient
+                      id="static-skin"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop offset="0" stop-color="#f4cfb3" />
+                      <stop offset="1" stop-color="#d9a585" />
+                    </linearGradient>
+                    <linearGradient
+                      id="static-glove"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop offset="0" stop-color="#1f6fae" />
+                      <stop offset="1" stop-color="#0e4983" />
+                    </linearGradient>
+                    <filter
+                      id="static-finger-shadow"
+                      x="-30%"
+                      y="-30%"
+                      width="160%"
+                      height="160%"
+                    >
+                      <feDropShadow
+                        dx="0"
+                        dy="2"
+                        stdDeviation="1.6"
+                        flood-color="#3b2416"
+                        flood-opacity="0.35"
+                      />
+                    </filter>
+                  </defs>
+
+                  <!-- Mesa -->
+                  <rect
+                    x="0"
+                    y="212"
+                    width="460"
+                    height="48"
+                    fill="#cbd5e1"
+                    opacity=".45"
+                  />
+                  <line
+                    x1="0"
+                    y1="212"
+                    x2="460"
+                    y2="212"
+                    stroke="#94a3b8"
+                    stroke-width="2"
+                  />
+
+                  <!-- Dedos estáticos (detrás de la palma) -->
+                  <g filter="url(#static-finger-shadow)">
+                    <!-- Meñique -->
+                    <g transform="translate(252 164)">
+                      <rect
+                        x="0"
+                        y="-6"
+                        width="36"
+                        height="12"
+                        rx="6"
+                        fill="#e5bda1"
+                        stroke="#c08a68"
+                        stroke-width="1"
+                      />
+                      <g transform="translate(30 0)">
+                        <rect
+                          x="0"
+                          y="-5.5"
+                          width="25"
+                          height="11"
+                          rx="5.5"
+                          fill="#e5bda1"
+                          stroke="#c08a68"
+                          stroke-width="1"
+                        />
+                        <g transform="translate(20 0)">
+                          <rect
+                            x="0"
+                            y="-5"
+                            width="21"
+                            height="10"
+                            rx="5"
+                            fill="#e5bda1"
+                            stroke="#c08a68"
+                            stroke-width="1"
+                          />
+                          <rect
+                            x="9"
+                            y="-4"
+                            width="10"
+                            height="4.5"
+                            rx="2.2"
+                            fill="#fdeee4"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <!-- Anular -->
+                    <g transform="translate(256 176)">
+                      <rect
+                        x="0"
+                        y="-7"
+                        width="45"
+                        height="14"
+                        rx="7"
+                        fill="#ecc7ac"
+                        stroke="#c08a68"
+                        stroke-width="1"
+                      />
+                      <g transform="translate(38 0)">
+                        <rect
+                          x="0"
+                          y="-6.5"
+                          width="30.5"
+                          height="13"
+                          rx="6.5"
+                          fill="#ecc7ac"
+                          stroke="#c08a68"
+                          stroke-width="1"
+                        />
+                        <g transform="translate(24 0)">
+                          <rect
+                            x="0"
+                            y="-6"
+                            width="24"
+                            height="12"
+                            rx="6"
+                            fill="#ecc7ac"
+                            stroke="#c08a68"
+                            stroke-width="1"
+                          />
+                          <rect
+                            x="11"
+                            y="-5"
+                            width="11"
+                            height="5"
+                            rx="2.5"
+                            fill="#fdeee4"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <!-- Medio -->
+                    <g transform="translate(258 188)">
+                      <rect
+                        x="0"
+                        y="-7.5"
+                        width="49.5"
+                        height="15"
+                        rx="7.5"
+                        fill="#f2d0b7"
+                        stroke="#c08a68"
+                        stroke-width="1"
+                      />
+                      <g transform="translate(42 0)">
+                        <rect
+                          x="0"
+                          y="-7"
+                          width="34"
+                          height="14"
+                          rx="7"
+                          fill="#f2d0b7"
+                          stroke="#c08a68"
+                          stroke-width="1"
+                        />
+                        <g transform="translate(27 0)">
+                          <rect
+                            x="0"
+                            y="-6.5"
+                            width="26.5"
+                            height="13"
+                            rx="6.5"
+                            fill="#f2d0b7"
+                            stroke="#c08a68"
+                            stroke-width="1"
+                          />
+                          <rect
+                            x="13"
+                            y="-5.5"
+                            width="12"
+                            height="5.5"
+                            rx="2.75"
+                            fill="#fdeee4"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <!-- Índice -->
+                    <g transform="translate(260 201)">
+                      <rect
+                        x="0"
+                        y="-8"
+                        width="47"
+                        height="16"
+                        rx="8"
+                        fill="#f7d8c0"
+                        stroke="#c08a68"
+                        stroke-width="1"
+                      />
+                      <g transform="translate(39 0)">
+                        <rect
+                          x="0"
+                          y="-7.5"
+                          width="32.5"
+                          height="15"
+                          rx="7.5"
+                          fill="#f7d8c0"
+                          stroke="#c08a68"
+                          stroke-width="1"
+                        />
+                        <g transform="translate(25 0)">
+                          <rect
+                            x="0"
+                            y="-7"
+                            width="25"
+                            height="14"
+                            rx="7"
+                            fill="#f7d8c0"
+                            stroke="#c08a68"
+                            stroke-width="1"
+                          />
+                          <rect
+                            x="11"
+                            y="-6"
+                            width="11"
+                            height="6"
+                            rx="3"
+                            fill="#fdeee4"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- Antebrazo + dorso -->
+                  <path
+                    d="M 0 172 C 55 166, 110 156, 165 150 C 205 146, 240 147, 262 157 C 274 163, 280 178, 280 198 L 280 212 L 0 212 Z"
+                    fill="url(#static-skin)"
+                  />
+                  <!-- Guante -->
+                  <path
+                    d="M 118 158 C 160 152, 210 146, 250 152 C 268 156, 280 172, 280 198 L 280 212 L 118 212 Z"
+                    fill="url(#static-glove)"
+                    opacity=".95"
+                  />
+                  <!-- Cable -->
+                  <path
+                    d="M 132 160 C 180 152, 228 150, 258 160"
+                    fill="none"
+                    stroke="#21b3c6"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+
+                  <!-- Electrodos -->
+                  <g>
+                    <rect
+                      x="52"
+                      y="168"
+                      width="48"
+                      height="11"
+                      rx="5.5"
+                      fill="#56D2BF"
+                      stroke="#0e4983"
+                      stroke-width="2"
+                    />
+                    <text
+                      x="76"
+                      y="163"
+                      font-size="9"
+                      fill="#005ba1"
+                      font-weight="bold"
+                      text-anchor="middle"
+                    >
+                      FES-EXT
+                    </text>
+                  </g>
+                  <g>
+                    <rect
+                      x="52"
+                      y="184"
+                      width="48"
+                      height="11"
+                      rx="5.5"
+                      fill="#56D2BF"
+                      fill-opacity=".3"
+                      stroke="#0e4983"
+                      stroke-width="2"
+                      stroke-dasharray="3 2"
+                    />
+                    <text
+                      x="76"
+                      y="206"
+                      font-size="9"
+                      fill="#0e4983"
+                      font-weight="bold"
+                      text-anchor="middle"
+                    >
+                      FES-FLEX
+                    </text>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Quick metrics footer -->
+              <div class="mt-4 grid grid-cols-2 gap-2 text-center">
+                <div
+                  class="p-2.5 rounded-xl bg-teal-50/60 dark:bg-slate-800/80 border border-teal-100/50 dark:border-transparent"
+                >
+                  <span
+                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                    >Frecuencia FES</span
+                  >
+                  <span
+                    class="text-sm font-extrabold text-teal-600 dark:text-teal-400"
+                    >10-50 Hz</span
+                  >
+                </div>
+                <div
+                  class="p-2.5 rounded-xl bg-teal-50/60 dark:bg-slate-800/80 border border-teal-100/50 dark:border-transparent"
+                >
+                  <span
+                    class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase"
+                    >Asistencia</span
+                  >
+                  <span
+                    class="text-sm font-extrabold text-emerald-600 dark:text-emerald-400"
+                    >Mecánica</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL PROYECTO & PROBLEMÁTICA -->
+    <section
+      id="proyecto"
+      class="py-20 bg-white dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800 transition-colors"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <span
+            class="text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest text-xs"
+            >Propósito Social e Innovación Médica</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display"
+          >
+            Tratando la Hemiplejía con Tecnología Asequible
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">
+            Un proyecto estudiantil orientado a dar respuesta a problemas reales
+            de salud y devolver la independencia motora a pacientes mediante
+            tecnología semiasistida.
+          </p>
+        </div>
+
+        <!-- Problem vs Solution Cards -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Problem Card -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border-l-4 border-l-rose-500 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl mb-6"
+              >
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-slate-900 dark:text-white mb-3 font-display"
+              >
+                La Hemiplejía y la Mano
+              </h3>
+              <p
+                class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"
+              >
+                La hemiplejía paraliza un lado del cuerpo debido a accidentes
+                cerebrovasculares (ACV) o lesiones cerebrales. La mano es una de
+                las áreas más afectadas por la
+                <strong class="text-rose-600 dark:text-rose-400"
+                  >espasticidad y pérdida de control voluntario</strong
+                >.
+              </p>
+              <ul
+                class="mt-5 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300"
+              >
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                  <span
+                    >Dificultad severa para realizar la apertura pasiva y activa
+                    de los dedos.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                  <span
+                    >Alto costo financiero de terapias extensas en centros
+                    especializados.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                  <span
+                    >Falta de herramientas portátiles para el seguimiento
+                    constante en el hogar.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 font-medium"
+            >
+              Problema a tratar por el equipo.
+            </div>
+          </div>
+
+          <!-- Solution Card -->
+          <div
+            class="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border-l-4 border-l-sky-500 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl mb-6"
+              >
+                <i class="fa-solid fa-hand-holding-medical"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-slate-900 dark:text-white mb-3 font-display"
+              >
+                La Propuesta Auralis
+              </h3>
+              <p
+                class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"
+              >
+                Un guante ergonómico semiasistido que aplica
+                <strong class="text-sky-600 dark:text-sky-400"
+                  >Electroestimulación Funcional (FES) de baja frecuencia y
+                  fuerza</strong
+                >
+                en puntos musculares estratégicos para favorecer la
+                neuroplasticidad y recuperar el movimiento.
+              </p>
+              <ul
+                class="mt-5 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300"
+              >
+                <li class="flex items-start gap-2.5">
+                  <i
+                    class="fa-solid fa-check text-sky-600 dark:text-sky-400 mt-1"
+                  ></i>
+                  <span
+                    >Impulsos eléctricos seguros regulados por microcontrolador
+                    programado.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i
+                    class="fa-solid fa-check text-sky-600 dark:text-sky-400 mt-1"
+                  ></i>
+                  <span
+                    >Mecanismo auxiliar para flexión y extensión progresiva de
+                    los dedos.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i
+                    class="fa-solid fa-check text-sky-600 dark:text-sky-400 mt-1"
+                  ></i>
+                  <span
+                    >Sincronización mediante App móvil para el control entre
+                    fisioterapeuta y paciente.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-sky-700 dark:text-sky-400 font-semibold"
+            >
+              Acompañamiento profesional por Terapista Física.
+            </div>
+          </div>
+        </div>
+
+        <!-- FES Science Explainer -->
+        <div
+          class="mt-12 bg-sky-50 dark:bg-slate-900/80 rounded-3xl p-8 border border-sky-200 dark:border-slate-800"
+        >
+          <div class="grid md:grid-cols-3 gap-6 text-center md:text-left">
+            <div class="space-y-2">
+              <div
+                class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center font-bold mx-auto md:mx-0"
+              >
+                1
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Electrodos Estratégicos
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Ubicación precisa en flexores y extensores para canalizar las
+                corrientes de baja intensidad.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <div
+                class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold mx-auto md:mx-0"
+              >
+                2
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Contracción Controlada
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Inicia la activación neuromuscular previniendo la atrofia por
+                desuso.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <div
+                class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold mx-auto md:mx-0"
+              >
+                3
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Reeducación Motora
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Promueve vías nerviosas de sustitución en el cerebro mediante
+                repetición asistida.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR INTERACTIVO DEL GUANTE -->
+    <section id="simulador" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+          <span
+            class="text-pacific-blue dark:text-turquoise font-bold uppercase tracking-widest text-xs"
+            >Laboratorio Virtual</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display"
+          >
+            Simulador Interactivo Auralis FES
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">
+            Ajusta la frecuencia (Hz) y la intensidad (mA): a menor estímulo,
+            menor elevación de los dedos.
+          </p>
+        </div>
+
+        <div
+          class="bg-white dark:bg-steel-azure/80 rounded-3xl border border-ocean-mist/30 dark:border-baltic-blue/60 shadow-xl overflow-hidden"
+        >
+          <!-- Barra superior -->
+          <div
+            class="bg-slate-100 dark:bg-baltic-blue/40 px-6 py-4 border-b border-slate-200 dark:border-baltic-blue/60 flex flex-wrap items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-3">
+              <span
+                class="w-3 h-3 rounded-full bg-turquoise animate-ping"
+              ></span>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-steel-azure dark:text-slate-200"
+                >Panel de Control de Estimulación FES</span
+              >
+            </div>
+            <span
+              id="sim-status-badge"
+              class="px-3 py-1 rounded-full text-xs font-bold bg-slate-200 dark:bg-baltic-blue text-slate-700 dark:text-slate-200"
+            >
+              Estado: EN ESPERA
+            </span>
+          </div>
+
+          <div class="p-6 lg:p-8 grid lg:grid-cols-12 gap-8">
+            <!-- Columna izquierda: mano + onda -->
+            <div class="lg:col-span-7 space-y-6">
+              <div
+                class="bg-slate-50 dark:bg-slate-950 rounded-2xl p-6 border border-slate-200 dark:border-baltic-blue/40 space-y-4"
+              >
+                <!-- Lecturas -->
+                <div class="grid grid-cols-3 gap-2 text-center">
+                  <div
+                    class="rounded-xl bg-white dark:bg-steel-azure/60 border border-slate-200 dark:border-baltic-blue/40 py-2"
+                  >
+                    <div class="text-[10px] uppercase text-slate-400 font-bold">
+                      Ángulo MCP
+                    </div>
+                    <div
+                      id="read-angle"
+                      class="text-lg font-extrabold text-pacific-blue dark:text-turquoise"
+                    >
+                      0°
+                    </div>
+                  </div>
+                  <div
+                    class="rounded-xl bg-white dark:bg-steel-azure/60 border border-slate-200 dark:border-baltic-blue/40 py-2"
+                  >
+                    <div class="text-[10px] uppercase text-slate-400 font-bold">
+                      Fuerza estimada
+                    </div>
+                    <div
+                      id="read-force"
+                      class="text-lg font-extrabold text-pacific-blue dark:text-turquoise"
+                    >
+                      0%
+                    </div>
+                  </div>
+                  <div
+                    class="rounded-xl bg-white dark:bg-steel-azure/60 border border-slate-200 dark:border-baltic-blue/40 py-2"
+                  >
+                    <div class="text-[10px] uppercase text-slate-400 font-bold">
+                      Fase
+                    </div>
+                    <div
+                      id="read-phase"
+                      class="text-sm font-extrabold text-pacific-blue dark:text-turquoise pt-1"
+                    >
+                      Reposo
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mano en vista 3/4 -->
+                <div class="relative w-full">
+                  <svg
+                    id="sim-hand-svg"
+                    viewBox="0 0 460 260"
+                    class="w-full h-auto"
+                  >
+                    <defs>
+                      <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#f4cfb3" />
+                        <stop offset="1" stop-color="#d9a585" />
+                      </linearGradient>
+                      <linearGradient id="glove" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#1f6fae" />
+                        <stop offset="1" stop-color="#0e4983" />
+                      </linearGradient>
+                      <filter
+                        id="finger-shadow"
+                        x="-30%"
+                        y="-30%"
+                        width="160%"
+                        height="160%"
+                      >
+                        <feDropShadow
+                          dx="0"
+                          dy="2"
+                          stdDeviation="1.6"
+                          flood-color="#3b2416"
+                          flood-opacity="0.35"
+                        />
+                      </filter>
+                    </defs>
+
+                    <!-- Mesa -->
+                    <rect
+                      x="0"
+                      y="212"
+                      width="460"
+                      height="48"
+                      fill="#cbd5e1"
+                      opacity=".45"
+                    />
+                    <line
+                      x1="0"
+                      y1="212"
+                      x2="460"
+                      y2="212"
+                      stroke="#94a3b8"
+                      stroke-width="2"
+                    />
+
+                    <!-- Dedos (detrás de la palma) -->
+                    <g id="fingers-layer" filter="url(#finger-shadow)"></g>
+
+                    <!-- Antebrazo + dorso -->
+                    <path
+                      d="M 0 172 C 55 166, 110 156, 165 150 C 205 146, 240 147, 262 157
+                         C 274 163, 280 178, 280 198 L 280 212 L 0 212 Z"
+                      fill="url(#skin)"
+                    />
+                    <!-- Guante -->
+                    <path
+                      d="M 118 158 C 160 152, 210 146, 250 152 C 268 156, 280 172, 280 198
+                         L 280 212 L 118 212 Z"
+                      fill="url(#glove)"
+                      opacity=".95"
+                    />
+                    <!-- Cable -->
+                    <path
+                      id="glove-cable"
+                      d="M 132 160 C 180 152, 228 150, 258 160"
+                      fill="none"
+                      stroke="#21b3c6"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+
+                    <!-- Electrodos -->
+                    <g
+                      class="cursor-pointer"
+                      onclick="selectSimMuscle('extensores')"
+                    >
+                      <rect
+                        id="node-extensors"
+                        x="52"
+                        y="168"
+                        width="48"
+                        height="11"
+                        rx="5.5"
+                        fill="#56D2BF"
+                        stroke="#0e4983"
+                        stroke-width="2"
+                      />
+                      <text
+                        x="76"
+                        y="163"
+                        font-size="9"
+                        fill="#005ba1"
+                        font-weight="bold"
+                        text-anchor="middle"
+                      >
+                        FES-EXT
+                      </text>
+                    </g>
+                    <g
+                      class="cursor-pointer"
+                      onclick="selectSimMuscle('flexores')"
+                    >
+                      <rect
+                        id="node-flexors"
+                        x="52"
+                        y="184"
+                        width="48"
+                        height="11"
+                        rx="5.5"
+                        fill="#56D2BF"
+                        fill-opacity=".3"
+                        stroke="#0e4983"
+                        stroke-width="2"
+                        stroke-dasharray="3 2"
+                      />
+                      <text
+                        x="76"
+                        y="206"
+                        font-size="9"
+                        fill="#0e4983"
+                        font-weight="bold"
+                        text-anchor="middle"
+                      >
+                        FES-FLEX
+                      </text>
+                    </g>
+
+                    <!-- Guía de ángulo -->
+                    <path
+                      id="angle-arc"
+                      d=""
+                      fill="none"
+                      stroke="#21b3c6"
+                      stroke-width="1.5"
+                      stroke-dasharray="4 3"
+                      opacity=".85"
+                    />
+
+                    <!-- Chispa -->
+                    <circle
+                      id="stim-spark"
+                      cx="76"
+                      cy="173"
+                      r="0"
+                      fill="none"
+                      stroke="#21b3c6"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+
+                <!-- Monitor de onda -->
+                <div
+                  class="bg-steel-azure rounded-xl p-3 border border-baltic-blue text-white"
+                >
+                  <div
+                    class="flex items-center justify-between text-[11px] text-turquoise mb-1"
+                  >
+                    <span
+                      ><i class="fa-solid fa-wave-square mr-1"></i> Pulso
+                      Eléctrico FES en vivo</span
+                    >
+                    <span id="live-hz-indicator">25 Hz • 18 mA • Bipásica</span>
+                  </div>
+                  <svg
+                    class="w-full h-14 bg-slate-950 rounded-lg"
+                    viewBox="0 0 300 40"
+                    preserveAspectRatio="none"
+                  >
+                    <line
+                      x1="0"
+                      y1="20"
+                      x2="300"
+                      y2="20"
+                      stroke="#1e3a5f"
+                      stroke-width="1"
+                    />
+                    <path
+                      id="waveform-path"
+                      d="M 0 20 L 300 20"
+                      fill="none"
+                      stroke="#21b3c6"
+                      stroke-width="1.6"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna derecha: controles -->
+            <div class="lg:col-span-5 space-y-4">
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                  >Grupo Muscular Objetivo</label
+                >
+                <div class="grid grid-cols-2 gap-2">
+                  <button
+                    onclick="selectSimMuscle('extensores')"
+                    id="btn-m-ext"
+                    class="px-3 py-2.5 rounded-xl text-xs text-center flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] transition-all"
+                  >
+                    <i class="fa-solid fa-hand-pointer text-xs"></i>
+                    Extensores de Dedos
+                  </button>
+                  <button
+                    onclick="selectSimMuscle('flexores')"
+                    id="btn-m-flex"
+                    class="px-3 py-2.5 rounded-xl text-xs text-center flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] transition-all"
+                  >
+                    <i class="fa-solid fa-hand-fist text-xs"></i>
+                    Flexores Profundos
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2"
+              >
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-slate-700 dark:text-slate-300"
+                    >Frecuencia de Impulso (Hz)</span
+                  >
+                  <span
+                    id="val-hz"
+                    class="font-extrabold text-teal-600 dark:text-teal-400"
+                    >25 Hz</span
+                  >
+                </div>
+                <input
+                  type="range"
+                  id="input-hz"
+                  min="10"
+                  max="50"
+                  value="25"
+                  oninput="updateSimParams()"
+                  class="w-full accent-teal-600 cursor-pointer"
+                />
+                <div class="flex justify-between text-[10px] text-slate-400">
+                  <span>10 Hz (Suave)</span><span>30 Hz (Terapéutico)</span
+                  ><span>50 Hz (Máx)</span>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2"
+              >
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-slate-700 dark:text-slate-300"
+                    >Intensidad de Corriente (mA)</span
+                  >
+                  <span
+                    id="val-ma"
+                    class="font-extrabold text-emerald-600 dark:text-emerald-400"
+                    >18 mA</span
+                  >
+                </div>
+                <input
+                  type="range"
+                  id="input-ma"
+                  min="5"
+                  max="40"
+                  value="18"
+                  oninput="updateSimParams()"
+                  class="w-full accent-emerald-600 cursor-pointer"
+                />
+                <div class="flex justify-between text-[10px] text-slate-400">
+                  <span>5 mA</span><span>20 mA (Recomendado)</span
+                  ><span>40 mA</span>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                  >Modo de Asistencia Mecánica</label
+                >
+                <select
+                  id="input-mode"
+                  onchange="updateSimParams()"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-teal-200 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-200"
+                >
+                  <option value="apertura">
+                    Asistencia para Apertura Pasiva (Extensión)
+                  </option>
+                  <option value="cierre">
+                    Asistencia para Cierre y Agarre (Flexión)
+                  </option>
+                  <option value="ciclo">
+                    Ciclo Continuo Alternado (Apertura / Cierre)
+                  </option>
+                </select>
+              </div>
+
+              <p
+                id="sim-hint"
+                class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed"
+              ></p>
+
+              <!-- CTA principal (estilo primario) -->
+              <button
+                id="btn-toggle-sim"
+                onclick="toggleSimState()"
+                class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white shadow-lg shadow-teal-600/25 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform text-sm uppercase tracking-wider"
+              >
+                <i class="fa-solid fa-play" id="sim-btn-icon"></i>
+                <span id="sim-btn-text">Iniciar Estimulación</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (() => {
+        const SVG_NS = "http://www.w3.org/2000/svg";
+        const TABLE_Y = 212;
+
+        // Vista 3/4: cada dedo arranca en una Y distinta (meñique arriba = más lejos)
+        const FINGERS = [
+          {
+            id: "pinky",
+            x: 252,
+            y: 164,
+            lens: [30, 20, 16],
+            w: 12,
+            fill: "#e5bda1",
+            lift: 0.78,
+          },
+          {
+            id: "ring",
+            x: 256,
+            y: 176,
+            lens: [38, 24, 18],
+            w: 14,
+            fill: "#ecc7ac",
+            lift: 0.88,
+          },
+          {
+            id: "middle",
+            x: 258,
+            y: 188,
+            lens: [42, 27, 20],
+            w: 15,
+            fill: "#f2d0b7",
+            lift: 0.97,
+          },
+          {
+            id: "index",
+            x: 260,
+            y: 201,
+            lens: [39, 25, 18],
+            w: 16,
+            fill: "#f7d8c0",
+            lift: 1.06,
+          },
+        ];
+        const fingerEls = {};
+
+        function segment(len, w, fill, nail) {
+          let s = `<rect x="0" y="${-w / 2}" width="${len + w / 2}" height="${w}" rx="${w / 2}"
+                 fill="${fill}" stroke="#c08a68" stroke-width="1"/>`;
+          if (nail)
+            s += `<rect x="${len - 7}" y="${-w / 2 + 1.5}" width="${w / 2 + 4}" height="4.5" rx="2.2" fill="#fdeee4"/>`;
+          return s;
+        }
+
+        function buildFinger(f) {
+          const [l1, l2, l3] = f.lens;
+          const g = document.createElementNS(SVG_NS, "g"); // ← namespace CORRECTO
+          g.setAttribute("transform", `translate(${f.x} ${f.y})`);
+          g.innerHTML = `
+        <g class="mcp">${segment(l1, f.w, f.fill)}
+          <g class="pip" transform="translate(${l1} 0)">${segment(l2, f.w - 1, f.fill)}
+            <g class="dip" transform="translate(${l2} 0)">${segment(l3, f.w - 2, f.fill, true)}</g>
+          </g>
+        </g>`;
+          document.getElementById("fingers-layer").appendChild(g);
+          fingerEls[f.id] = {
+            mcp: g.querySelector(".mcp"),
+            pip: g.querySelector(".pip"),
+            dip: g.querySelector(".dip"),
+            lens: f.lens,
+          };
+        }
+
+        FINGERS.forEach(buildFinger);
+
+        // ---------- Estado ----------
+        const state = {
+          running: false,
+          muscle: "extensores",
+          mode: "apertura",
+          hz: 25,
+          ma: 18,
+          t0: 0,
+          cur: { mcp: 0, pip: 0, dip: 0 },
+        };
+
+        const $ = (id) => document.getElementById(id);
+        const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+        // ---------- Modelo fisiológico simplificado ----------
+        const MOTOR_THRESHOLD = 8;
+        const SATURATION = 35;
+        const intensityFactor = (ma) =>
+          clamp((ma - MOTOR_THRESHOLD) / (SATURATION - MOTOR_THRESHOLD), 0, 1);
+        const fusionFactor = (hz) => clamp(0.3 + (hz - 10) / 28, 0.3, 1);
+
+        function envelope(t) {
+          const p = t % 6;
+          if (p < 1) return { e: p, phase: "Rampa ↑" };
+          if (p < 3) return { e: 1, phase: "Meseta" };
+          if (p < 4) return { e: 4 - p, phase: "Rampa ↓" };
+          return { e: 0, phase: "Reposo" };
+        }
+
+        // ---------- Interfaz ----------
+        function paintMuscleButtons() {
+          // Activo = estilo PRIMARIO (gradiente teal→emerald)
+          const on =
+            "bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold border-2 border-teal-700 shadow-md shadow-teal-600/25";
+          // Inactivo = estilo SECUNDARIO (outline)
+          const off =
+            "bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-teal-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold shadow-sm";
+          const base =
+            "px-3 py-2.5 rounded-xl text-xs text-center flex items-center justify-center gap-2 hover:scale-[1.02] transition-all ";
+
+          const both = state.mode === "ciclo";
+          $("btn-m-ext").className =
+            base + (both || state.muscle === "extensores" ? on : off);
+          $("btn-m-flex").className =
+            base + (both || state.muscle === "flexores" ? on : off);
+
+          $("node-extensors").setAttribute(
+            "fill-opacity",
+            both || state.muscle === "extensores" ? 1 : 0.3,
+          );
+          $("node-flexors").setAttribute(
+            "fill-opacity",
+            both || state.muscle === "flexores" ? 1 : 0.3,
+          );
+        }
+
+        function updateHint() {
+          const i = intensityFactor(state.ma),
+            f = fusionFactor(state.hz);
+          let msg;
+          if (state.ma < MOTOR_THRESHOLD)
+            msg = `Por debajo del umbral motor (~${MOTOR_THRESHOLD} mA): solo sensación, sin movimiento visible.`;
+          else if (f < 0.7)
+            msg =
+              "Frecuencia baja: contracción no fusionada, movimiento parcial con temblor.";
+          else if (i > 0.85)
+            msg =
+              "Intensidad alta: movimiento completo. Vigila la tolerancia y la fatiga del paciente.";
+          else msg = "Rango terapéutico: movimiento funcional y estable.";
+          $("sim-hint").textContent = msg;
+        }
+
+        window.selectSimMuscle = function (m) {
+          state.muscle = m;
+          if (state.mode !== "ciclo") {
+            state.mode = m === "extensores" ? "apertura" : "cierre";
+            $("input-mode").value = state.mode;
+          }
+          paintMuscleButtons();
+        };
+
+        window.updateSimParams = function () {
+          state.hz = +$("input-hz").value;
+          state.ma = +$("input-ma").value;
+          state.mode = $("input-mode").value;
+          if (state.mode === "apertura") state.muscle = "extensores";
+          if (state.mode === "cierre") state.muscle = "flexores";
+          $("val-hz").textContent = `${state.hz} Hz`;
+          $("val-ma").textContent = `${state.ma} mA`;
+          $("live-hz-indicator").textContent =
+            `${state.hz} Hz • ${state.ma} mA • Bipásica`;
+          paintMuscleButtons();
+          updateHint();
+        };
+
+        window.toggleSimState = function () {
+          state.running = !state.running;
+          state.t0 = performance.now();
+          const badge = $("sim-status-badge");
+
+          if (state.running) {
+            badge.textContent = "Estado: ESTIMULANDO";
+            badge.className =
+              "px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-sm shadow-teal-600/25";
+            $("sim-btn-icon").className = "fa-solid fa-stop";
+            $("sim-btn-text").textContent = "Detener Estimulación";
+            // El botón cambia a "danger suave" mientras corre
+            $("btn-toggle-sim").className =
+              "w-full py-4 rounded-xl font-bold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-red-200 dark:border-red-900 text-red-600 dark:text-red-400 flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] transition-all text-sm uppercase tracking-wider";
+          } else {
+            badge.textContent = "Estado: EN ESPERA";
+            badge.className =
+              "px-3 py-1 rounded-full text-xs font-bold bg-slate-200 dark:bg-baltic-blue text-slate-700 dark:text-slate-200";
+            $("sim-btn-icon").className = "fa-solid fa-play";
+            $("sim-btn-text").textContent = "Iniciar Estimulación";
+            $("btn-toggle-sim").className =
+              "w-full py-4 rounded-xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white shadow-lg shadow-teal-600/25 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform text-sm uppercase tracking-wider";
+          }
+        };
+
+        // ---------- Dibujo ----------
+        function drawWaveform(amp01, t) {
+          const pulses = Math.max(2, Math.round(state.hz / 4));
+          const spacing = 300 / pulses;
+          const h = 2 + amp01 * 16;
+          const pw = 3;
+          const shift = (t * 40) % spacing;
+          let d = "M 0 20";
+          for (let k = -1; k <= pulses; k++) {
+            const x = k * spacing + shift;
+            d += ` L ${x} 20 L ${x} ${20 - h} L ${x + pw} ${20 - h} L ${x + pw} ${20 + h} L ${x + 2 * pw} ${20 + h} L ${x + 2 * pw} 20`;
+          }
+          d += " L 300 20";
+          $("waveform-path").setAttribute("d", d);
+        }
+
+        function applyAngles(mcp, pip, dip) {
+          FINGERS.forEach((f) => {
+            const el = fingerEls[f.id];
+            const k = f.lift; // cada dedo levanta un poco distinto → abanico visible
+            el.mcp.setAttribute("transform", `rotate(${-mcp * k})`);
+            el.pip.setAttribute(
+              "transform",
+              `translate(${el.lens[0]} 0) rotate(${pip * k})`,
+            );
+            el.dip.setAttribute(
+              "transform",
+              `translate(${el.lens[1]} 0) rotate(${dip * k})`,
+            );
+          });
+
+          // Arco guía sobre el nudillo del índice
+          const cx = FINGERS[3].x,
+            cy = FINGERS[3].y,
+            r = 80;
+          const a = (Math.max(0, mcp) * Math.PI) / 180;
+          $("angle-arc").setAttribute(
+            "d",
+            mcp > 1
+              ? `M ${cx + r} ${cy} A ${r} ${r} 0 0 0 ${cx + r * Math.cos(a)} ${cy - r * Math.sin(a)}`
+              : "",
+          );
+        }
+
+        function frame(now) {
+          const t = (now - state.t0) / 1000;
+          const I = intensityFactor(state.ma);
+          const F = fusionFactor(state.hz);
+          const force = I * F;
+
+          let target = { mcp: 0, pip: 0, dip: 0 },
+            env = 0,
+            phase = "Reposo",
+            activeMuscle = null;
+
+          if (state.running) {
+            let ext = 0,
+              flex = 0;
+            if (state.mode === "ciclo") {
+              const c = envelope(t % 12 < 6 ? t : t - 6);
+              env = c.e;
+              phase = c.phase;
+              if (t % 12 < 6) {
+                ext = env;
+                activeMuscle = "extensores";
+                phase = "Apertura · " + phase;
+              } else {
+                flex = env;
+                activeMuscle = "flexores";
+                phase = "Cierre · " + phase;
+              }
+            } else {
+              const c = envelope(t);
+              env = c.e;
+              phase = c.phase;
+              if (state.mode === "apertura") {
+                ext = env;
+                activeMuscle = "extensores";
+              } else {
+                flex = env;
+                activeMuscle = "flexores";
+              }
+            }
+
+            const tremor =
+              (1 - F) * I * 5 * Math.sin(2 * Math.PI * state.hz * t * 0.25);
+
+            // EXTENSIÓN: los dedos se levantan de la mesa
+            target.mcp = 52 * ext * force + (ext > 0.05 ? tremor : 0);
+            target.pip = -8 * ext * force;
+            target.dip = -4 * ext * force;
+
+            // FLEXIÓN: el dedo se eleva un poco y se curva (agarre en el aire)
+            target.mcp += -16 * flex * force;
+            target.pip += 42 * flex * force + (flex > 0.05 ? tremor : 0);
+            target.dip += 34 * flex * force;
+          }
+
+          const s = 0.15;
+          for (const k of ["mcp", "pip", "dip"])
+            state.cur[k] += (target[k] - state.cur[k]) * s;
+          applyAngles(state.cur.mcp, state.cur.pip, state.cur.dip);
+
+          $("read-angle").textContent =
+            `${Math.max(0, state.cur.mcp).toFixed(0)}°`;
+          $("read-force").textContent =
+            `${state.running ? Math.round(force * env * 100) : 0}%`;
+          $("read-phase").textContent = state.running ? phase : "Reposo";
+
+          drawWaveform(state.running ? (state.ma / 40) * env : 0, t);
+
+          const spark = $("stim-spark");
+          if (state.running && env > 0.05) {
+            spark.setAttribute("cy", activeMuscle === "flexores" ? 189 : 173);
+            spark.setAttribute("r", 8 + ((t * state.hz) % 1) * 18);
+            spark.setAttribute("opacity", (1 - ((t * state.hz) % 1)) * env);
+          } else spark.setAttribute("r", 0);
+
+          requestAnimationFrame(frame);
+        }
+
+        updateSimParams();
+        requestAnimationFrame(frame);
+      })();
+    </script>
+
+    <!-- RESULTADOS Y LOGROS OBTENIDOS -->
+    <section
+      id="resultados"
+      class="py-24 bg-white dark:bg-slate-900 transition-colors"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <span
+            class="text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest text-xs"
+            >Investigación Documentada</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display"
+          >
+            Resultados y Evaluación Fisioterapéutica
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">
+            Logros comprobados durante las pruebas iniciales del guante Auralis
+            en Expotec 2026.
+          </p>
+        </div>
+
+        <!-- Results Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm border-t-4 border-t-emerald-500"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-slate-400 uppercase"
+                >Construcción</span
+              >
+              <span
+                class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300"
+                >Exitoso</span
+              >
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-2 font-display"
+            >
+              Prototipo del Guante
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed"
+            >
+              Construcción parcial y funcional del prototipo utilizando
+              materiales reutilizables, textiles ergonómicos y cableado
+              integrado.
+            </p>
+          </div>
+
+          <div
+            class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm border-t-4 border-t-emerald-500"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-slate-400 uppercase"
+                >Biomecánica</span
+              >
+              <span
+                class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300"
+                >Exitoso</span
+              >
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-2 font-display"
+            >
+              Movimiento de los Dedos
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed"
+            >
+              El mecanismo permitió realizar de manera efectiva los movimientos
+              de apertura y cierre de los dedos durante las pruebas.
+            </p>
+          </div>
+
+          <div
+            class="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm border-t-4 border-t-emerald-500"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-slate-400 uppercase"
+                >Validación</span
+              >
+              <span
+                class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300"
+                >Exitoso</span
+              >
+            </div>
+            <h3
+              class="text-lg font-bold text-slate-900 dark:text-white mb-2 font-display"
+            >
+              Evaluación Fisioterapéutica
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed"
+            >
+              La terapista física
+              <strong class="text-slate-900 dark:text-white"
+                >Nathaly Morales</strong
+              >
+              probó el guante y corroboró el correcto funcionamiento
+              biomecánico.
+            </p>
+          </div>
+        </div>
+
+        <!-- Report Quote Highlight -->
+        <div
+          class="mt-12 bg-gradient-to-r from-sky-500 to-indigo-600 text-white rounded-3xl p-8 sm:p-10 shadow-lg relative overflow-hidden"
+        >
+          <div
+            class="relative z-10 flex flex-col md:flex-row items-center gap-6"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center text-3xl shrink-0"
+            >
+              <i class="fa-solid fa-quote-left text-white"></i>
+            </div>
+            <div class="space-y-2">
+              <p class="text-base sm:text-lg font-light italic leading-relaxed">
+                "Auralis logró cumplir su principal propósito tecnológico al
+                desarrollar un guante funcional semiasistido que facilita el
+                movimiento de los dedos en personas con dificultades de
+                movilidad. Recalcar que el guante es un complemento a la terapia
+                de tipo EMS. Contar con el acompañamiento de profesionales en
+                fisioterapia fortaleció la seguridad y viabilidad del
+                dispositivo."
+              </p>
+              <span
+                class="block text-xs font-bold text-sky-100 uppercase tracking-widest"
+                >— Nathaly Morales - Asesora</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPO Y ASESORES -->
+    <section
+      id="equipo"
+      class="py-24 bg-slate-50 dark:bg-slate-950 transition-colors"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <span
+            class="text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest text-xs"
+            >Integrantes del Proyecto</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display"
+          >
+            Equipo Creador y Asesores
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">
+            Estudiantes de la Sección 9-D del Colegio Técnico Profesional Don
+            Bosco en colaboración con especialistas profesionales.
+          </p>
+        </div>
+
+        <!-- Students Section -->
+        <div class="mb-14">
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 font-display"
+          >
+            <i class="fa-solid fa-user-graduate text-sky-600"></i> Estudiantes
+            Investigadores (Sección 9-D)
+          </h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Student 1 -->
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-sky-500 transition-all"
+            >
+              <div
+                class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 text-white text-2xl font-black flex items-center justify-center mb-4 shadow-md shadow-sky-500/20"
+              >
+                SM
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Santiago Masís H.
+              </h4>
+              <p class="text-xs text-sky-600 dark:text-sky-400 font-bold mt-1">
+                Investigación & Desarrollo
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                CTP Don Bosco • 2026
+              </p>
+            </div>
+
+            <!-- Student 2 -->
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-sky-500 transition-all"
+            >
+              <div
+                class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white text-2xl font-black flex items-center justify-center mb-4 shadow-md shadow-indigo-500/20"
+              >
+                CO
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Camila Ortiz G.
+              </h4>
+              <p
+                class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1"
+              >
+                Diseño & prototipado
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                CTP Don Bosco • 2026
+              </p>
+            </div>
+
+            <!-- Student 3 -->
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-sky-500 transition-all"
+            >
+              <div
+                class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-teal-500 to-sky-600 text-white text-2xl font-black flex items-center justify-center mb-4 shadow-md shadow-teal-500/20"
+              >
+                CP
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Camila Picado P.
+              </h4>
+              <p
+                class="text-xs text-teal-600 dark:text-teal-400 font-bold mt-1"
+              >
+                Hardware & Pruebas
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                CTP Don Bosco • 2026
+              </p>
+            </div>
+
+            <!-- Student 4 -->
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-center hover:border-sky-500 transition-all"
+            >
+              <div
+                class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-sky-600 to-teal-500 text-white text-2xl font-black flex items-center justify-center mb-4 shadow-md shadow-sky-600/20"
+              >
+                MS
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                Mariangel Salazar S.
+              </h4>
+              <p class="text-xs text-sky-600 dark:text-sky-400 font-bold mt-1">
+                Biomecánica & Documentación
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                CTP Don Bosco • 2026
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutors and Advisors -->
+        <div>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 font-display"
+          >
+            <i class="fa-solid fa-chalkboard-user text-indigo-600"></i> Docente
+            Tutora y Asesores Profesionales
+          </h3>
+
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl shrink-0 font-bold"
+              >
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                  Laura Ramírez Solís
+                </h4>
+                <p class="text-xs text-sky-600 dark:text-sky-400 font-bold">
+                  Docente Tutora
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  CTP Don Bosco
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl shrink-0 font-bold"
+              >
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                  Nathaly Morales
+                </h4>
+                <p
+                  class="text-xs text-emerald-600 dark:text-emerald-400 font-bold"
+                >
+                  Asesora Fisioterapeuta
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  Especialista Clínica
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl shrink-0 font-bold"
+              >
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">
+                  Bryan Jara
+                </h4>
+                <p
+                  class="text-xs text-indigo-600 dark:text-indigo-400 font-bold"
+                >
+                  Asesor de Programación
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  Especialista Técnico
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section
+      id="contacto"
+      class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors"
+    >
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div
+          class="bg-slate-50 dark:bg-slate-950 rounded-3xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800 shadow-lg"
+        >
+          <div class="text-center space-y-2 mb-10">
+            <span
+              class="text-sky-600 dark:text-sky-400 font-bold uppercase tracking-widest text-xs"
+              >Comunicación & Feedback</span
+            >
+            <h2
+              class="text-3xl font-extrabold text-slate-900 dark:text-white font-display"
+            >
+              ¿Quieres saber más de Auralis?
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 text-sm">
+              Déjanos tus comentarios, consultas sobre la investigación o
+              interés en pruebas futuras.
+            </p>
+          </div>
+
+          <form
+            id="contact-form"
+            onsubmit="handleContactSubmit(event)"
+            class="space-y-5"
+          >
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label
+                  for="user_name"
+                  class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                  >Nombre</label
+                >
+                <input
+                  id="user_name"
+                  name="user_name"
+                  type="text"
+                  required
+                  placeholder="Tu nombre"
+                  class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-sky-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="user_email"
+                  class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                  >Correo Electrónico</label
+                >
+                <input
+                  id="user_email"
+                  name="user_email"
+                  type="email"
+                  required
+                  placeholder="correo@ejemplo.com"
+                  class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-sky-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="user_role"
+                class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                >Rol o Perfil</label
+              >
+              <select
+                id="user_role"
+                name="user_role"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-sky-500"
+              >
+                <option value="Fisioterapeuta / Médico">
+                  Fisioterapeuta / Médico
+                </option>
+                <option value="Paciente / Familiar">Paciente / Familiar</option>
+                <option value="Docente / Estudiante">
+                  Docente / Estudiante
+                </option>
+                <option value="Otro público interesado">
+                  Otro público interesado
+                </option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2"
+                >Mensaje o Comentario</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Escribe tu mensaje..."
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-sky-500"
+              ></textarea>
+            </div>
+
+            <button
+              id="contact-submit-btn"
+              type="submit"
+              class="w-full py-4 rounded-xl font-extrabold bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white shadow-lg shadow-sky-500/20 transition-all hover:scale-[1.01]"
+            >
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-xl bg-sky-500 text-slate-950 flex items-center justify-center font-extrabold text-base"
+            >
+              <i class="fa-solid fa-hand-holding-medical"></i>
+            </div>
+            <div>
+              <span
+                class="text-base font-extrabold text-white tracking-wider font-display"
+                >AURALIS</span
+              >
+              <span class="block text-[10px] text-slate-400"
+                >Guante Terapéutico para Hemiplejía</span
+              >
+            </div>
+          </div>
+
+          <div class="text-center md:text-right space-y-1">
+            <p class="text-slate-300 font-semibold">
+              Colegio Técnico Profesional Don Bosco
+            </p>
+            <p>
+              Dirección Regional San José • Circuito Escolar 06 • Costa Rica
+            </p>
+            <p class="text-sky-400 font-bold">
+              Proyecto Tecnológico Expotec 2026
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center"
+        >
+          <p>
+            &copy; 2026 Auralis. Desarrollado por Santiago Masís, Camila Ortiz,
+            Camila Picado y Mariangel Salazar.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#inicio" class="hover:text-sky-400">Volver Arriba</a>
+            <span>•</span>
+            <button
+              onclick="openModal('disclaimer-modal')"
+              class="hover:text-sky-400"
+            >
+              Nota Legal
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL INVESTIGACIÓN -->
+    <div
+      id="research-modal"
+      class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 relative max-h-[85vh] overflow-y-auto shadow-2xl"
+      >
+        <button
+          onclick="closeModal('research-modal')"
+          class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+
+        <div class="space-y-4">
+          <span
+            class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-300 text-xs font-bold"
+            >Ficha de Proyecto Expotec 2026</span
+          >
+          <h3
+            class="text-2xl font-bold font-display text-slate-900 dark:text-white"
+          >
+            Resumen Científico Auralis
+          </h3>
+
+          <p
+            class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"
+          >
+            El proyecto investigó el desarrollo de un guante terapéutico
+            semiasistido diseñado para apoyar la rehabilitación motora de la
+            mano en personas con hemiplejía mediante estimulación eléctrica de
+            baja frecuencia (FES) e impulsos programados.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div
+              class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700"
+            >
+              <strong
+                class="text-xs font-bold text-sky-600 dark:text-sky-400 block mb-1"
+                >Objetivo General</strong
+              >
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                Desarrollar un prototipo funcional del guante AURALIS integrando
+                electroestimulación, electrónica y aplicación móvil como
+                herramienta complementaria en la rehabilitación de la mano.
+              </p>
+            </div>
+
+            <div
+              class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700"
+            >
+              <strong
+                class="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-1"
+                >Variables de Investigación</strong
+              >
+              <p class="text-xs text-slate-600 dark:text-slate-300">
+                <strong>Independiente:</strong> Uso del guante con estimulación
+                FES de baja frecuencia.<br /><strong>Dependiente:</strong> Nivel
+                de apoyo en ejercicios de movilidad y estimulación muscular.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 flex justify-end">
+            <button
+              onclick="closeModal('research-modal')"
+              class="px-5 py-2.5 rounded-xl bg-sky-600 text-white font-bold text-xs"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DISCLAIMER -->
+    <div
+      id="disclaimer-modal"
+      class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 max-w-md w-full rounded-3xl p-6 border border-slate-200 dark:border-slate-800 relative shadow-2xl"
+      >
+        <button
+          onclick="closeModal('disclaimer-modal')"
+          class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+
+        <h3
+          class="text-lg font-bold text-slate-900 dark:text-white mb-3 font-display"
+        >
+          <i class="fa-solid fa-triangle-exclamation text-amber-500 mr-2"></i>
+          Aviso Médico e Institucional
+        </h3>
+        <p
+          class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4"
+        >
+          El prototipo Auralis ha sido desarrollado estrictamente con fines de
+          investigación estudiantil en Expotec 2026 (CTP Don Bosco). Requiere la
+          supervisión directa de profesionales en salud antes de cualquier
+          aplicación terapéutica con pacientes reales.
+        </p>
+
+        <div class="flex justify-end">
+          <button
+            onclick="closeModal('disclaimer-modal')"
+            class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold"
+          >
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/styles.js"></script>
+    <!-- SDK Oficial de EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+  </body>
+</html>
